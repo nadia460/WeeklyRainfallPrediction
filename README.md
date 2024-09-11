@@ -1,5 +1,7 @@
 **Deskripsi Program: Prediksi Curah Hujan dengan CNN dan RNN**
 
+Paper : https://ieeexplore.ieee.org/document/9862821
+
 **Pendahuluan:**
 Program ini menggunakan teknologi Spasial Convolutional Neural Networks (CNNs) dan Recurrent Neural Networks (RNNs) untuk memprediksi curah hujan. Model ini memproses data spasial dan temporal untuk memberikan estimasi curah hujan yang akurat.
 
