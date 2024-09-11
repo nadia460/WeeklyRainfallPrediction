@@ -1,0 +1,116 @@
+
+<!DOCTYPE html>
+<html lang="zxx">
+
+<head>
+  <meta charset="utf-8">
+  <title>Sistem Prediksi Curah Hujan</title>
+
+  <!-- mobile responsive meta -->
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+  <!-- ** Plugins Needed for the Project ** -->
+  <!-- Bootstrap -->
+  <link rel="stylesheet" href="{{url_for('static', filename='assets/bootstrap/bootstrap.min.css')}}">
+  <!-- Main Stylesheet -->
+  <link href="{{url_for('static', filename='assets/css/styles.css')}}" rel="stylesheet">
+
+  <!--Favicon-->
+  <link rel="shortcut icon" href="{{url_for('static', filename='assets/images/LOGO-UNJANI.png')}}" type="image/x-icon">
+  <link rel="icon" href="{{url_for('static', filename='assets/images/LOGO-UNJANI.png')}}" type="image/x-icon">
+
+</head>
+
+<body>
+  <!-- preloader start -->
+  <div class="preloader">
+    <img src="{{url_for('static', filename='assets/images/loading2.gif')}}" alt="preloader">
+  </div>
+  <!-- preloader end -->
+
+<!-- header -->
+<header class="fixed-top header">
+  
+  <!-- navbar -->
+  <div class="navigation w-100">
+    <div class="container">
+      <nav class="navbar navbar-expand-lg navbar-dark p-0">
+        <a class="navbar-brand" href="index.html"><img src="{{url_for('static', filename='assets/images/LOGO-UNJANI.png')}}" alt="logo"></a>
+        <button class="navbar-toggler rounded-0" type="button" data-toggle="collapse" data-target="#navigation"
+          aria-controls="navigation" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navigation">
+          <ul class="navbar-nav ml-auto text-center">
+            </li>
+            <li class="nav-item active">
+              <a class="nav-link" href="{{ url_for('beranda')}}">Beranda</a>
+            </li>
+            <li class="nav-item @@blog">
+              <a class="nav-link" href="{{ url_for('prediksi')}}">Prediksi</a>
+            </li>
+            <li class="nav-item @@home">
+              <a class="nav-link" href="{{ url_for('panduan')}}">Panduan</a>
+            </li>
+          </ul>
+        </div>
+      </nav>
+    </div>
+  </div>
+</header>
+<!-- /header -->
+
+
+<!-- page title -->
+<section class="page-title-section overlay" data-background="{{url_for('static', filename='assets/images/Weather-Images-HD.jpeg')}}">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-8">
+        <ul class="list-inline custom-breadcrumb">
+          <li class="list-inline-item"><a class="h2 text-success font-secondary" href="@@page-link">Prediksi Curah Hujan</a></li>
+          <li class="list-inline-item text-white h3 font-secondary @@nasted"></li>
+        </ul>
+        <p class="text-lighten">Menggunakan 2D Convolutional Neural Networks dan Recurrent Neural Networks</p>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- /page title -->
+
+<!-- courses -->
+<section class="section-sm bg-gray">
+  <div class="container">
+    <div class="row">
+      <div class="col-12">
+        <center><h5 > Mahasiswa </h5>
+        <p> Nadia Dwi Puji Lestari <br/> NIM. 3411181158 </p></center>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-6">
+        <center><h5> Pembimbing 1 </h5>
+        <p> Dr. Esmeralda Contessa Djamal, S.T., M.T. <br/> NID. 412127670 </p></center>
+      </div>
+      <div class="col-6">
+        <center><h5> Pembimbing 2 </h5>
+        <p> Ridwan Ilyas, S.Kom., M.T. <br/> NID. 412182990 </p></center>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- /courses -->
+
+
+<!-- jQuery -->
+<script src="{{url_for('static', filename='assets/jQuery/jquery.min.js')}}"></script>
+<!-- Bootstrap JS -->
+<script src="{{url_for('static', filename='assets/bootstrap/bootstrap.min.js')}}"></script>
+
+<!-- Main Script -->
+<script src="{{url_for('static', filename='assets/js/script.js')}}"></script>
+
+</body>
+</html>
+

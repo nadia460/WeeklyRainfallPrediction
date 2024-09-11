@@ -1,0 +1,185 @@
+
+<!DOCTYPE html>
+<html lang="zxx">
+
+<head>
+  <meta charset="utf-8">
+  <title>Sistem Prediksi Curah Hujan</title>
+
+  <!-- mobile responsive meta -->
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+  <!-- ** Plugins Needed for the Project ** -->
+  <!-- Bootstrap -->
+  <link rel="stylesheet" href="{{url_for('static', filename='assets/bootstrap/bootstrap.min.css')}}">
+  <!-- Main Stylesheet -->
+  <link href="{{url_for('static', filename='assets/css/styles.css')}}" rel="stylesheet">
+
+  <!--Favicon-->
+  <link rel="shortcut icon" href="{{url_for('static', filename='assets/images/LOGO-UNJANI.png')}}" type="image/x-icon">
+  <link rel="icon" href="{{url_for('static', filename='assets/images/LOGO-UNJANI.png')}}" type="image/x-icon">
+
+</head>
+
+<body>
+  <!-- preloader start -->
+  <div class="preloader">
+    <img src="{{url_for('static', filename='assets/images/loading2.gif')}}" alt="preloader">
+  </div>
+  <!-- preloader end -->
+
+<!-- header -->
+<header class="fixed-top header">
+  
+  <!-- navbar -->
+  <div class="navigation w-100">
+    <div class="container">
+      <nav class="navbar navbar-expand-lg navbar-dark p-0">
+        <a class="navbar-brand" href="index.html"><img src="{{url_for('static', filename='assets/images/LOGO-UNJANI.png')}}" alt="logo"></a>
+        <button class="navbar-toggler rounded-0" type="button" data-toggle="collapse" data-target="#navigation"
+          aria-controls="navigation" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navigation">
+          <ul class="navbar-nav ml-auto text-center">
+            </li>
+            <li class="nav-item @@home">
+              <a class="nav-link" href="{{ url_for('beranda')}}">Beranda</a>
+            </li>
+            <li class="nav-item active">
+              <a class="nav-link" href="{{ url_for('prediksi')}}">Prediksi</a>
+            </li>
+            <li class="nav-item @@home">
+              <a class="nav-link" href="{{ url_for('panduan')}}">Panduan</a>
+            </li>
+          </ul>
+        </div>
+      </nav>
+    </div>
+  </div>
+</header>
+<!-- /header -->
+
+
+<!-- page title -->
+<section class="page-title-section overlay" data-background="{{url_for('static', filename='assets/images/Weather-Images-HD.jpeg')}}">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-8">
+        <ul class="list-inline custom-breadcrumb">
+          <li class="list-inline-item"><a class="h2 text-success font-secondary" href="@@page-link">Prediksi Curah Hujan</a></li>
+          <li class="list-inline-item text-white h3 font-secondary @@nasted"></li>
+        </ul>
+        <p class="text-lighten">Menggunakan 2D Convolutional Neural Networks dan Recurrent Neural Networks</p>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- /page title -->
+
+<!-- courses -->
+<section class="section-sm">
+  <div class="container">
+    <form method="POST" action="" enctype="multipart/form-data"> 
+    <div class="row">
+  
+      <!-- Choose File -->
+      <div class="col-4 mb-4">
+        <div class="card border-0 rounded-0 hover-shadow">
+          <div class="card-body">
+            <!-- location -->
+            <p><i class="ti-location-pin text-primary mr-2"></i>Stasiun Cuaca 1</p>
+            <div class="custom-file">
+                <input type="file"  id="file" accept=".csv" name="file" required>
+                <!--<label class="custom-file-label" for="file" id="nameFile">Pilih file</label>-->
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- Choose File -->
+      <div class="col-4">
+        <div class="card border-0 rounded-0 hover-shadow">
+          <div class="card-body">
+            <!-- location -->
+            <p><i class="ti-location-pin text-primary mr-2"></i>Stasiun Cuaca 2</p>
+            <div class="custom-file">
+              <input type="file"  id="file2" accept=".csv" name="file2" required>
+              <!--<label class="custom-file-label" for="file" id="nameFile">Pilih file</label>-->
+            </div>
+          </div>
+        </div>
+      </div>   
+      <!-- Choose File -->
+      <div class="col-4">
+        <div class="card border-0 rounded-0 hover-shadow">
+          <div class="card-body">
+            <!-- location -->
+            <p><i class="ti-location-pin text-primary mr-2"></i>Stasiun Cuaca 3</p>
+            <div class="custom-file">
+              <input type="file" id="file3" accept=".csv" name="file3" required>  
+              <!--<label class="custom-file-label" for="file3">Pilih file</label>-->      
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- End Choose File -->
+      <div class="col-12">
+        <center><button type="submit" class="btn btn-primary btn-sm">PREDIKSI</button></center>
+      </div>
+    
+      <!-- border -->
+      <div class="col-12 mt-4 order-4">
+        
+      </div>
+      <!-- End border -->
+    </div>
+    </form>
+
+    <div class="row">
+      <div class="col-12">
+       <h5 > Hasil Prediksi </h5>
+      </div>
+      <table class="col-12">
+        <tr>
+          <td class="col-1">Nama File :</td>
+          <td class="col-3"> {{ namafile1 }} </td>
+          <td class="col-3"> {{ namafile2 }} </td>
+          <td class="col-3"> {{ namafile3 }} </td>
+        </tr>
+        <tr>
+          <td class="col-2"><br/>Kelas Prediksi :</td>
+          
+          <td class="col-3"><br/>  </td>
+          <td class="col-3"><br/> {{ hasil2 }} </td>
+          <td class="col-3"><br/>  </td>
+        </tr>
+      </table>
+      
+    </div>
+  </div>
+</section>
+<!-- /courses -->
+
+<script type="application/javascript">
+  $('#file').on('change', function () {
+      // Ambil nama file 
+      let fileName = $(this).val().split('\\').pop();
+      // Ubah "Choose a file" label sesuai dengan nama file yag akan diupload
+      $(this).next('.custom-file-label').addClass("selected").html(fileName);
+  });
+</script>
+
+<!-- jQuery -->
+<script src="{{url_for('static', filename='assets/jQuery/jquery.min.js')}}"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+<!-- Bootstrap JS -->
+<script src="{{url_for('static', filename='assets/bootstrap/bootstrap.min.js')}}"></script>
+
+<!-- Main Script -->
+<script src="{{url_for('static', filename='assets/js/script.js')}}"></script>
+
+</body>
+</html>
+
